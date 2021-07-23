@@ -1,0 +1,16 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    
+}
+
+
+<h2>Add New Item</h2>
+<form method="post">
+    <input type="submit" value="Add" />&nbsp;
+    <input type="checkbox" asp-for="@ViewData["Done"]"  name="Done" /></label>&nbsp;&nbsp;
+    <label>Name&nbsp;<input type="text" asp-for="@ViewData["Name"]" name="Name" /></label>&nbsp;&nbsp;
+    <label>Date&nbsp;<input type="datetime" asp-for="@ViewData["EntryDate"]" name="EntryDate" /></label>
+</form>
+

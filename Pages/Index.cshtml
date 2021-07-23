@@ -1,10 +1,37 @@
 ﻿@page
 @model IndexModel
+@using WebApplicationToDo.Data
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "To-Do List WebApp";
+    ViewData["Done"] = Model.inserttodo.Done;
+    ViewData["Name"] = Model.inserttodo.Name;
+    ViewData["EntryDate"] = Model.inserttodo.EntryDate;
+    ViewData["todolist"] = Model.todoList;
 }
 
+
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+          <h1 class="display-4">Welcome to  a small Todo List</h1>
 </div>
+
+<partial name="_todopartial" />
+
+<table border="1">
+  <thead><tr><td>Mark/UnMark Already Added Items</td></tr></thead>
+<tbody>
+@foreach (var col in Model.todoList)
+{      
+ <tr><td>
+         <form method="get">
+             @col.Done
+             <input type="checkbox"  asp-for="@col.Done" name="Done" />
+             <input type="text" asp-for="@col.Name" name="Name" />
+             <input type="datetime" asp-for="@col.EntryDate" name="EntryDate" />
+             <input type="Submit" value="Done" />
+         </form>
+</td></tr>
+}
+</tbody>
+</table>
+       
+

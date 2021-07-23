@@ -14,8 +14,6 @@ namespace WebApplicationToDo.Data
         public string Name { get; set; }
 
         [Key]
-
-
         public DateTime EntryDate { get; set; } = DateTime.Now;
     }
 }
