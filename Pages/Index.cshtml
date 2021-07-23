@@ -16,22 +16,30 @@
 
 <partial name="_todopartial" />
 
+
 <table border="1">
-  <thead><tr><td>Mark/UnMark Already Added Items</td></tr></thead>
-<tbody>
-@foreach (var col in Model.todoList)
-{      
- <tr><td>
-         <form method="get">
-             @col.Done
-             <partial name="_todopartialupdateitem" model="@col.Done" />
-             <input type="text" asp-for="@col.Name" name="Name" />
-             <input type="datetime" asp-for="@col.EntryDate" name="EntryDate" />
-             <input type="Submit" value="Done" />
-         </form>
-</td></tr>
-}
-</tbody>
+    <thead><tr><td>Mark/UnMark Already Added Items</td></tr></thead>
+    <tbody>
+       
+        @foreach (var col in Model.todoList)
+        {
+            <tr>
+                <td>
+
+                    <form method="get">
+                        @col.Done
+                        <partial name="_todopartialupdateitem" model="@col.Done" />
+                        <input type="text" asp-for="@col.Name" name="Name" />
+                        <input type="datetime" asp-for="@col.EntryDate" name="EntryDate" />
+                        <input type="Submit" value="Done" />
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
 </table>
+
+
+
        
 
