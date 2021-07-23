@@ -24,7 +24,7 @@
  <tr><td>
          <form method="get">
              @col.Done
-             <input type="checkbox"  asp-for="@col.Done" name="Done" />
+             <partial name="_todopartialupdateitem" model="@col.Done" />
              <input type="text" asp-for="@col.Name" name="Name" />
              <input type="datetime" asp-for="@col.EntryDate" name="EntryDate" />
              <input type="Submit" value="Done" />
