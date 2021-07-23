@@ -11,35 +11,41 @@
 
 
 <div class="text-center">
-          <h1 class="display-4">Welcome to  a small Todo List</h1>
+    <h1 class="display-4">Welcome to  a small Todo List</h1>
 </div>
 
-<partial name="_todopartial" />
-
-
-<table border="1">
-    <thead><tr><td>Mark/UnMark Already Added Items</td></tr></thead>
-    <tbody>
-       
-        @foreach (var col in Model.todoList)
-        {
-            <tr>
-                <td>
-
-                    <form method="get">
-                        @col.Done
-                        <partial name="_todopartialupdateitem" model="@col.Done" />
-                        <input type="text" asp-for="@col.Name" name="Name" />
-                        <input type="datetime" asp-for="@col.EntryDate" name="EntryDate" />
-                        <input type="Submit" value="Done" />
-                    </form>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
+@section Scripts {
+        <script src="~/js/site.js" asp-append-version="true"></script>
+        <partial name="_ValidationScriptsPartial" />}
 
 
 
-       
+    <partial name="_todopartial" />
+
+
+    <table border="1">
+        <thead><tr><td>Mark/UnMark Already Added Items</td></tr></thead>
+        <tbody>
+
+            @foreach (var col in Model.todoList)
+            {
+                <tr>
+                    <td>
+
+                        <form method="get">
+                            @col.Done
+                            <partial name="_todopartialupdateitem" model="@col.Done" />
+                            <input type="text" asp-for="@col.Name" name="Name" placeholder="max length 255"/>
+                            <input type="datetime" asp-for="@col.EntryDate" name="EntryDate" />
+                            <input type="Submit" value="Done" />
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+
+
+
 

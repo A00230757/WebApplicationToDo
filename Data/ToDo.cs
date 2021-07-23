@@ -10,7 +10,8 @@ namespace WebApplicationToDo.Data
     {
         public Boolean Done { get; set; }
 
-        [StringLength(255, MinimumLength = 5, ErrorMessage = "This needs to be longer.")]
+        [StringLength(255,  ErrorMessage = "This needs to be longer.")]
+
         public string Name { get; set; }
 
         [Key]

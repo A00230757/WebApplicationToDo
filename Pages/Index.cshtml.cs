@@ -34,7 +34,7 @@ namespace WebApplicationToDo.Pages
         public void OnGet()
         {
             Debug.WriteLine("Send to debug output." );
-            if (updatetodo.Name != null & updatetodo.Done != null & updatetodo.EntryDate != null)
+            if (ModelState.IsValid & updatetodo.Name != null & updatetodo.Done != null & updatetodo.EntryDate != null)
             {
                 try
                 {
@@ -57,7 +57,7 @@ namespace WebApplicationToDo.Pages
         }
         public void OnPost()
         {
-            if (inserttodo.Name != null & inserttodo.Done != null & inserttodo.EntryDate != null)
+            if (ModelState.IsValid & inserttodo.Name != null & inserttodo.Done != null & inserttodo.EntryDate != null)
             {
                 
                 try
